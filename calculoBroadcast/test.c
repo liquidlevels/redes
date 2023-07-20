@@ -2,8 +2,8 @@
 #include <string.h>
 
 void function(){
-	char source[15];
-	char ip[15];
+	char source[16];
+	char ip[16];
 	const char dot[3] = ".";
 	char* token;
 	int i = 0;
@@ -11,7 +11,7 @@ void function(){
 
 	printf("Give me the ip: ");
 	scanf("%15s", source);
-	
+
 	//Pasa el contenido de source a ip
 	while(source[i] != '\0'){
 		ip[i] = source[i];

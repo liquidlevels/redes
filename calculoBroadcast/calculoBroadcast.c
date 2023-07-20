@@ -7,26 +7,14 @@
  */
 
 void decimalValidation(){
-	//
-	struct structure{
-		char ip[14];
-	};
-	struct structure declaracion;
-	String decimalIp;
+	int ip[16];
+	int octetos[5] = sscanf(ip, "%d.%d.%d.%d", &octetos[0], &octetos[1], &octetos[2], &octetos[3]);
 
-	printf("Dame la ip en este formato: 223.201.202.102\n");
-	scanf("%s\n", &decimalIp);
-	strcpy(declaracion.ip, decimalIp);
-   	char * token = strtok(declaracion.ip, ".");
-   	while( token != NULL) {
-      		printf( " %s", token ); //printing each token
-      		token = strtok(NULL, ".");
-   	}
-	printf("\n");
+	printf("%d", ip);
+
 }
 
 int main(){
 	decimalValidation();
-
 	return 0;
 }
