@@ -108,7 +108,7 @@ void function(){
 	}
 	printf("broadcast: %d.%d.%d.%d\n\n", broadcast[0], broadcast[1], broadcast[2], broadcast[3]);
 	
-	//conversion a binario
+	//conversion a binario (agradecimiento a chatgpt)
 	for (int i = 0; i < 4; i++) {
         	for (int j = 7; j >= 0; j--) {
             		binario[i * 8 + j] = ip_octetos[i] & 1;
