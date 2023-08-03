@@ -9,11 +9,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 int vector[12] = {0,1,1,2,3,5,8,13,21,33,54,7};
 int vectorComparator[12];
-int flag = 0;
 
 int sumFinder(int number){
 	int vectorLength = sizeof(vector) / sizeof(vector[0]);
@@ -28,7 +26,6 @@ int sumFinder(int number){
 
 		printf("[%d] ", vectorComparator[i]);
 	}
-	
 	printf("\n");
 	//try 1
 	/*	
@@ -70,7 +67,6 @@ int sumFinder(int number){
 		if( i > vectorLength)
 			break;
 		for(i = j+1; i < vectorLength; i++){
-			//printf("posicion: j:%d, i:%d", j, i);
 			if(vectorComparator[j] + vector[i] == number){	
 				printf("positions: [%d] and [%d]\n", j, i);
 				printf("%d + %d = %d\n", vectorComparator[j], vector[i], number);
@@ -80,11 +76,10 @@ int sumFinder(int number){
 		j++;
 		
 	} while(j < vectorLength);
-
 	
 }
 
 int main(){
-	sumFinder(21);
+	sumFinder(8);
 	return 0;
 }
