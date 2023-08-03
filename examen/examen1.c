@@ -9,8 +9,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//max number for an integer is 2147483647
-int counter = 0;
 int digits[10];
 int dividedNumber[10] = {0,1,2,3,4,5,6,7,8,9};
 int vectorLength = sizeof(digits) / sizeof(digits[0]);
@@ -21,34 +19,37 @@ void splitNumber(int number){
 	while(number > 0){
 		int split = number % 10;
 		digits[i] = split;
-		printf("[%d] ", digits[i]);
+		//printf("[%d] ", digits[i]);
 		number /= 10;
 		i--;
 	}
+	/*
 	printf("\n");
 	for(int i = 0; i < vectorLength; i++){
 		printf("[%d] ", digits[i+1]);
 	}
-	printf("\n");
+	printf("\n");*/
 }
 
 void sum(int position, int sumValue){
-	for(int i = 0; i < vectorLength; i++){
+	printf("before sum ");
+	for(int i = 0; i < vectorLength; i++){	
 		printf("[%d] ", digits[i+1]);
 	}
 	printf("\n");
 
 	printf("in the %d position we add: %d\n", position, sumValue);
-	digits[position] = digits[position] + sumValue;
+	digits[position+1] = digits[position+1] + sumValue;
+
 	for(int i = 0; i < vectorLength; i++){
-		printf("[%d] ", digits[i]);
+		printf("[%d] ", digits[i+1]);
 	}
 	printf("\n");
 
 }
 
 int main(){
-	splitNumber(1234567894);
-	sum(0,9);
+	splitNumber(1234567896);
+	sum(0,3);
 	return 0;
 }
