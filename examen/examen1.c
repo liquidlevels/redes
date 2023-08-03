@@ -15,32 +15,11 @@ int digits[10];
 int dividedNumber[10] = {0,1,2,3,4,5,6,7,8,9};
 int vectorLength = sizeof(digits) / sizeof(digits[0]);
 
-int *splitNumber(int number){
-	//thank chatgpt for the help with this
-	int temp = number;
-
-	while(temp != 0){
-		temp /= 10;
-		counter++;
-	}
-
-	for(int i = counter; i <= 0; i--){
-		digits[i] = number % 10;
-		number /= 10;
-	}
-	
-	for(int i = 0; i < vectorLength; i++){
-		printf("[%d]", digits[i]);
-	}
-	return 0;
-
-}
-
-void esplitNumber(int number){
+void splitNumber(int number){
+	//thank to chatgpt and https://www.log2base2.com/c-examples/loop/split-a-number-into-digits-in-c.html
 	int i = vectorLength;
 	while(number > 0){
 		int split = number % 10;
-		printf("split %d\n", split);
 		digits[i] = split;
 		printf("[%d] ", digits[i]);
 		number /= 10;
@@ -48,29 +27,14 @@ void esplitNumber(int number){
 	}
 	printf("\n");
 	for(int i = 0; i < vectorLength; i++){
-		printf("[%d] ", digits[i]);
+		printf("[%d] ", digits[i+1]);
 	}
 	printf("\n");
 }
 
-void sum(int number, int position, int sumValue){
-	int temp = number;
-	printf("%d, %d, %d, %d\n", number, position, sumValue, temp);
-	while(temp != 0){
-		temp /= 10;
-		counter++;
-	}
-
-	printf("%d, %d, %d\n", counter, temp, number);
-	
-	for(int i = counter; i <= 0; i--){
-		digits[i] = number % 10;
-		printf("[%d] ", digits[i]);
-		number /= 10;
-	}
-
+void sum(int position, int sumValue){
 	for(int i = 0; i < vectorLength; i++){
-		printf("[%d] ", digits[i]);
+		printf("[%d] ", digits[i+1]);
 	}
 	printf("\n");
 
@@ -84,7 +48,7 @@ void sum(int number, int position, int sumValue){
 }
 
 int main(){
-	esplitNumber(1234567890);
-	//sum(123456789,0,9);
+	splitNumber(1234567894);
+	sum(0,9);
 	return 0;
 }
