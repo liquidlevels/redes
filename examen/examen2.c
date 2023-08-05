@@ -10,8 +10,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int vector[12] = {0,1,1,2,3,5,8,13,21,33,54,7};
-int vectorComparator[12];
+int vector[15] = {0,1,1,2,3,5,8,13,21,10,54,7,-2,4,4};
+int vectorComparator[15];
 
 int sumFinder(int number){
 	int vectorLength = sizeof(vector) / sizeof(vector[0]);
@@ -76,7 +76,7 @@ int sumFinder(int number){
 		j++;
 		
 	} while(j < vectorLength);
-	
+	return 0;	
 }
 
 int main(){
