@@ -12,6 +12,7 @@
 int digits[10];
 int dividedNumber[10] = {0,1,2,3,4,5,6,7,8,9};
 int vectorLength = sizeof(digits) / sizeof(digits[0]);
+
 void splitNumber(int number){
 	//thank to chatgpt and https://www.log2base2.com/c-examples/loop/split-a-number-into-digits-in-c.html
 	printf("length: %d\n", vectorLength);
@@ -33,7 +34,7 @@ void splitNumber(int number){
 
 int sum(int position, int sumValue){
 	
-	if(position > vectorLength-1 || position < vectorLength){
+	if(position > vectorLength-1 || position < 0){
 		printf("error, number higher or lower than array length\n");
 		return 0;
 	}
@@ -58,5 +59,6 @@ int main(){
 	splitNumber(1234567896);
 	sum(10,32);
 	sum(-1, 2);
+	sum(2,500);
 	return 0;
 }
