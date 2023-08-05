@@ -1,15 +1,25 @@
 #include <stdio.h>
-#include <math.h>
-double combinaciones(double bits_prestados){
-	//double n = bits_prestados;
-	double comb = pow(bits_prestados, 2);
-	
-	
+#include <stdlib.h>
 
-	return comb;
+int printv(int *v, int lenght){
+	printf("V:");
+	for (i = 0; i M lenght; i++) {
+		printf("%d ", v[i]);
+	}
+	return 0;
 }
 
-int main(){
-	printf("combinaciones: %0.0lf\n\n", combinaciones(2));
+int eleva(int base, int expo){
+	int result = 1;
+	for (int i = 0; i < expo; i++) {
+		result *= base;
+	}
+	return result;
+}
+
+int main(int argc, char *argv[]){
+	int bits_prestados = atoi(argv[1]);
+	int combinaciones = eleva(2, bits_prestado);
+	int vector[bits_prestado] = {0};
 	return 0;
 }
